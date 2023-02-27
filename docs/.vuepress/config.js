@@ -1,4 +1,4 @@
-const pinyin = require('pinyin');
+const { pinyin, PINYIN_STYLE } = require('@napi-rs/pinyin');
 const { slugify: _slugify } = require('@vuepress/shared-utils');
 
 module.exports = {
@@ -20,6 +20,15 @@ module.exports = {
             },
         },
         '@vuepress/back-to-top': true,
+        sitemap: {
+            hostname: 'https://docs.rsshub.app',
+        },
+        'vuepress-plugin-meilisearch': {
+            hostUrl: 'https://meilisearch.rsshub.app',
+            apiKey: '375c36cd9573a2c1d1e536214158c37120fdd0ba6cd8829f7a848e940cc22245',
+            indexUid: 'rsshub',
+            maxSuggestions: 14,
+        },
     },
     locales: {
         '/': {
@@ -39,10 +48,10 @@ module.exports = {
         },
         extendMarkdown: (md) => {
             md.use(require('../.format/md/hierarchySlug'), {
-                slugify: function (s) {
+                slugify(s) {
                     return _slugify(
                         pinyin(s, {
-                            style: pinyin.STYLE_NORMAL,
+                            style: PINYIN_STYLE.Plain,
                             heteronym: true,
                             segment: true,
                         })
@@ -66,19 +75,14 @@ module.exports = {
         ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }],
         ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
         ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ff8549' }],
+        ['script', { type: 'text/javascript', src: 'https://cdn.wwads.cn/js/makemoney.js' }],
     ],
+    theme: 'vuepress-theme-rsshub',
     themeConfig: {
         repo: 'DIYgod/RSSHub',
         editLinks: true,
         docsDir: 'docs',
         smoothScroll: true,
-        algolia: {
-            apiKey: '6247bc0db93150fd9e531b93a3fa4046',
-            indexName: 'rsshub',
-            algoliaOptions: {
-                hitsPerPage: 14,
-            },
-        },
         locales: {
             '/': {
                 lang: 'zh-CN',

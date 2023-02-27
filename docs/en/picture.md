@@ -8,11 +8,13 @@ pageClass: routes
 
 ### Photos
 
-<RouteEn author="nczitzk" example="/1x/latest/all" path="/1x/:type?/:caty?" :paramsDesc="['sort type, `latest` by default, or `popular` or `curators-choice`', 'picture category, `all` by default, see below']">
+<RouteEn author="nczitzk" example="/1x" path="/1x/:category?" :paramsDesc="['Category, Latest awarded by default, see below']">
 
-| Picture Category | Code          |
+| Category         | Title         |
 | ---------------- | ------------- |
-| All categories   | all           |
+| Latest awarded   | latest        |
+| Popular          | popular       |
+| Latest published | published     |
 | Abstract         | abstract      |
 | Action           | action        |
 | Animals          | animals       |
@@ -36,6 +38,50 @@ pageClass: routes
 
 </RouteEn>
 
+## 35PHOTO
+
+### New photos
+
+<RouteEn author="nczitzk" example="/35photo/new" path="/35photo/new"/>
+
+### Featured photos
+
+<RouteEn author="nczitzk" example="/35photo/actual" path="/35photo/actual"/>
+
+### New interesting
+
+<RouteEn author="nczitzk" example="/35photo/interesting" path="/35photo/interesting"/>
+
+### Photos on the world map
+
+<RouteEn author="nczitzk" example="/35photo/map" path="/35photo/map"/>
+
+### Genre
+
+<RouteEn author="nczitzk" example="/35photo/genre/99"  path="/35photo/genre/:id" :paramsDesc="['id, can be found in URL']"/>
+
+### Author
+
+<RouteEn author="nczitzk" example="/35photo/author/mariuszsix"  path="/35photo/author/:id" :paramsDesc="['id, can be found in URL']"/>
+
+## Asian to lick
+
+### Home
+
+<RouteEn author="nczitzk" example="/asiantolick" path="/asiantolick"/>
+
+### Category
+
+<RouteEn author="nczitzk" example="/asiantolick/category/90" path="/asiantolick/category/:category?" :paramsDesc="['Category, the id can be found in URL, homepage by default']"/>
+
+### Tag
+
+<RouteEn author="nczitzk" example="/asiantolick/tag/1045" path="/asiantolick/tag/:tag?" :paramsDesc="['Tag, the id can be found in URL, homepage by default']"/>
+
+### Search
+
+<RouteEn author="nczitzk" example="/asiantolick/search/lolita" path="/asiantolick/search/:keyword?" :paramsDesc="['Keyword, empty by default']"/>
+
 ## BabeHub
 
 ### Category
@@ -58,10 +104,6 @@ pageClass: routes
 
 <RouteEn author="FHYunCai" example="/bing" path="/bing" radar="1" rssbud="1"/>
 
-## ComicsKingdom Comic Strips
-
-<RouteEn author="stjohnjohnson" example="/comicskingdom/baby-blues" path="/comicskingdom/:strip" :paramsDesc="['URL path of the strip on comicskingdom.com']" />
-
 ## DailyArt
 
 <RouteEn author="zphw" example="/dailyart/en" path="/dailyart/:language?" :paramsDesc="['Support en, es, fr, de, it, zh, jp, etc. English by default.']" />
@@ -69,6 +111,27 @@ pageClass: routes
 ## Dilbert Comic Strip
 
 <RouteEn name="Daily Strip" author="Maecenas" example="/dilbert/strip" path="/dilbert/strip"/>
+
+## E-Hentai
+
+For RSS content, specify options in the `routeParams` parameter in query string format to control additional functionality
+
+| Key         | Meaning                                                                          | Accepted keys  | Default value |
+| ----------- | -------------------------------------------------------------------------------- | -------------- | ------------- |
+| bittorrent  | Whether include a link to the latest torrent                                     | 0/1/true/false | false         |
+| embed_thumb | Whether the cover image is embedded in the RSS feed rather than given as a link  | 0/1/true/false | false         |
+
+### Favorites
+
+<RouteEn author="yindaheng98" example="/ehentai/favorites/0/posted/1" path="/ehentai/favorites/:favcat?/:order?/:page?/:routeParams?" :paramsDesc="['Favorites folder number','`posted`(Sort by gallery release time) , `favorited`(Sort by time added to favorites)', 'Page number', 'Additional parameters, see the table above']" anticrawler="1" supportBT="1" />
+
+### Tag
+
+<RouteEn author="yindaheng98" example="/ehentai/tag/language:chinese/1" path="/ehentai/tag/:tag/:page?/:routeParams?" :paramsDesc="['Tag', 'Page number', 'Additional parameters, see the table above']" anticrawler="1" supportBT="1" />
+
+### Search
+
+<RouteEn author="yindaheng98" example="/ehentai/search/f_search=artist%3Amana%24/1" path="/ehentai/search/:params?/:page?/:routeParams?" :paramsDesc="['Search parameters. You can copy the content after `https://e-hentai.org/?`', 'Page number', 'Additional parameters, see the table above']" anticrawler="1" supportBT="1" />
 
 ## Elite Babes
 
@@ -95,6 +158,68 @@ pageClass: routes
 ### Search
 
 <RouteEn author="nczitzk" example="/elitebabes/search/pose" path="/elitebabes/search/:keyword?" :paramsDesc="['Keyword']"/>
+
+## Fantia
+
+### Search
+
+<RouteEn author="nczitzk" example="/fantia/search/posts/all/daily" path="/fantia/search/:type?/:caty?/:period?/:order?/:rating?/:keyword?" :paramsDesc="['Type, see the table below, `posts` by default', 'Category, see the table below, can also be found in search page URL, `すべてのクリエイター` by default', 'Ranking period, see the table below, empty by default' ,'Sorting, see the table below, `更新の新しい順` by default', 'Rating, see the table below, `すべて` by default', 'Keyword, empty by default']">
+
+Type
+
+| クリエイター   | 投稿    | 商品       | コミッション      |
+| -------- | ----- | -------- | ----------- |
+| fanclubs | posts | products | commissions |
+
+Category
+
+| 分类           | 分类名        |
+| ------------ | ---------- |
+| イラスト         | illust     |
+| 漫画           | comic      |
+| コスプレ         | cosplay    |
+| YouTuber・配信者 | youtuber   |
+| Vtuber       | vtuber     |
+| 音声作品・ASMR    | voice      |
+| 声優・歌い手       | voiceactor |
+| アイドル         | idol       |
+| アニメ・映像・写真    | anime      |
+| 3D           | 3d         |
+| ゲーム制作        | game       |
+| 音楽           | music      |
+| 小説           | novel      |
+| ドール          | doll       |
+| アート・デザイン     | art        |
+| プログラム        | program    |
+| 創作・ハンドメイド    | handmade   |
+| 歴史・評論・情報     | history    |
+| 鉄道・旅行・ミリタリー  | railroad   |
+| ショップ         | shop       |
+| その他          | other      |
+
+Ranking period
+
+| デイリー  | ウィークリー | マンスリー   | 全期間 |
+| ----- | ------ | ------- | --- |
+| daily | weekly | monthly | all |
+
+Sorting
+
+| 更新の新しい順 | 更新の古い順     | 投稿の新しい順 | 投稿の古い順     | お気に入り数順 |
+| ------- | ---------- | ------- | ---------- | ------- |
+| updater | update_old | newer   | create_old | popular |
+
+Rating
+
+| すべて | 一般のみ    | R18 のみ |
+| --- | ------- | ------ |
+| all | general | adult  |
+
+</RouteEn>
+
+### User Posts
+
+<RouteEn author="nczitzk" example="/fantia/user/3498" path="/fantia/user/:id" :paramsDesc="['User id, can be found in user profile URL']" />
 
 ## GoComics Comic Strips
 
@@ -141,6 +266,12 @@ For example:
 
 <RouteEn author="hoilc" example="/loveheaven/update/kimetsu-no-yaiba" path="/loveheaven/update/:slug" :paramsDesc="['Manga slug, can be found in URL, including neither `manga-` nor `.html`']" />
 
+## Meituclub
+
+### Latest
+
+<RouteEn author="ocleo1" example="/meituclub/latest" path="/meituclub/latest" />
+
 ## NASA Astronomy Picture of the Day
 
 ### NASA
@@ -150,6 +281,12 @@ For example:
 ### Cheng Kung University Mirror
 
 <RouteEn author="nczitzk" example="/nasa/apod-ncku" path="/nasa/apod-ncku" />
+
+## National Geographic
+
+### Photo of the Day
+
+<RouteEn author="LogicJake OrangeEd1t TonyRL" example="/natgeo/dailyphoto" path="/natgeo/dailyphoto"/>
 
 ## nHentai
 
@@ -161,20 +298,77 @@ For example:
 
 <RouteEn author="MegrezZhu hoilc" example="/nhentai/search/language%3Ajapanese+-scat+-yaoi+-guro+-%22mosaic+censorship%22" path="/nhentai/search/:keyword/:mode?" :paramsDesc="['Keywords for search. You can copy the content after `q=` after searching on the original website, or you can enter it directly. See the [official website](https://nhentai.net/info/) for details', 'mode, `simple` to only cover，`detail` to all content, `torrent` to include Magnet URI, need login, refer to [Route-specific Configurations](/en/install/#route-specific-configurations), default to `simple`']" anticrawler="1" supportBT="1"/>
 
+## Pixabay
+
+### Search
+
+<RouteEn author="TonyRL" example="/pixabay/search/cat" path="/pixabay/search/:q/:order?" :paramsDesc="['Search term', 'Order, `popular` or `latest`, `latest` by default']" radar="1" selfhost="1"/>
+
+## Rare Historical Photos
+
+### Home
+
+<RouteEn author="TonyRL" example="/rarehistoricalphotos" path="/rarehistoricalphotos" radar="1"/>
+
 ## Tits Guru
 
 ### Home
 
 <RouteEn author="MegrezZhu" example="/tits-guru/home" path="/tits-guru/home"/>
+
 ### Daily Best
 
 <RouteEn author="MegrezZhu" example="/tits-guru/daily" path="/tits-guru/daily"/>
+
 ### Models
 
 <RouteEn author="MegrezZhu" example="/tits-guru/model/mila-azul" path="/tits-guru/model/:name" :paramsDesc="['Module name, see [here](https://tits-guru.com/models) for details']"/>
+
 ### Categories
 
 <RouteEn author="MegrezZhu" example="/tits-guru/category/bikini" path="/tits-guru/category/:type" :paramsDesc="['Category, see [here](https://tits-guru.com/categories) for details']"/>
+
+## wallhaven
+
+::: tip Tip
+
+When parameter **Need Details** is set to `true` `yes` `t` `y`, RSS will add the title, uploader, upload time, and category information of each image, which can support the filtering function of RSS reader.
+
+However, the number of requests to the site increases a lot when it is turned on, which causes the site to return `Response code 429 (Too Many Requests)`. So you need to specify a smaller `limit` parameter, i.e. add `?limit=<the number of posts for a request>` after the route, here is an example.
+
+For example [Latest Wallpapers](https://wallhaven.cc/latest), the route turning on **Need Details** is [/wallhaven/latest/true](https://rsshub.app/wallhaven/latest/true), and then specify a smaller `limit`. We can get [/wallhaven/latest/true?limit=5](https://rsshub.app/wallhaven/latest/true?limit=5).
+
+:::
+
+### Category
+
+<RouteEn author="nczitzk Fatpandac" example="/wallhaven/latest" path="/wallhaven/:category?/:needDetails?" :paramsDesc="['Category, see below, Latest by default', 'Need Details, `true/yes` as yes, no by default']">
+
+| Latest | Hot | Toplist | Random |
+| ------ | --- | ------- | ------ |
+| latest | hot | toplist | random |
+
+</RouteEn>
+
+### Search
+
+<RouteEn author="nczitzk Fatpandac" example="/wallhaven/search/categories=110&purity=110&sorting=date_added&order=desc" path="/wallhaven/search/:filter?/:needDetails?" :paramsDesc="['Filter, empty by default', 'Need Details, `true`/`yes` as yes, no by default']">
+
+::: tip Tip
+
+Subscribe pages starting with `https://wallhaven.cc/search`, fill the text after `?` as `filter` in the route. The following is an example:
+
+The text after `?` is `q=id%3A711&sorting=random&ref=fp&seed=8g0dgd` for [Wallpaper Search: #landscape - wallhaven.cc](https://wallhaven.cc/search?q=id%3A711&sorting=random&ref=fp&seed=8g0dgd), so the route is [/wallhaven/q=id%3A711&sorting=random&ref=fp&seed=8g0dgd](https://rsshub.app/wallhaven/q=id%3A711&sorting=random&ref=fp&seed=8g0dgd)
+
+:::
+
+</RouteEn>
+
+## WallpaperHub
+
+### Wallpapers
+
+<RouteEn author="nczitzk" example="/wallpaperhub" path="/wallpaperhub" radar="1" rssbud="1"/>
 
 ## yande.re
 

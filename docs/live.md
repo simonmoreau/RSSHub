@@ -32,6 +32,12 @@ pageClass: routes
 
 </Route>
 
+## 抖音直播
+
+### 直播间开播
+
+<Route author="TonyRL" example="/douyin/live/685317364746" path="/douyin/live/:rid" :paramsDesc="['直播间 id, 可在主播直播间页 URL 中找到']" anticrawler="1" radar="1" rssbud="1" puppeteer="1"/>
+
 ## 斗鱼直播
 
 ### 直播间开播
@@ -44,11 +50,11 @@ pageClass: routes
 
 <Route author="SettingDust xyqfer" example="/huya/live/edmunddzhang" path="/huya/live/:id" :paramsDesc="['直播间id或主播名(有一些id是名字，如上)']" radar="1" rssbud="1"/>
 
-## 浪 Play (原 kingkong) 直播
+## 浪 Play 直播
 
 ### 直播间开播
 
-<Route author="MittWillson" example="/langlive/room/666666" path="/langlive/room/:id" :paramsDesc="['直播间 id, 可在主播直播间页 URL 中找到']"/>
+<Route author="MittWillson" example="/lang/live/room/1352360" path="/lang/live/room/:id" :paramsDesc="['直播间 id, 可在主播直播间页 URL 中找到']"/>
 
 ## 猎趣 TV
 
@@ -61,6 +67,18 @@ pageClass: routes
 ### 直播间开播
 
 <Route author="hoilc" example="/egameqq/room/497383565" path="/egameqq/room/:id" :paramsDesc="['直播间 id, 可在主播直播间页 URL 中找到']"/>
+
+## 企鹅直播
+
+### 直播间开播
+
+<Route author="nczitzk" example="/qq/live/10012045" path="/qq/live/:id" :paramsDesc="['直播间 id, 可在主播直播间页 URL 中找到']"/>
+
+## 旺球体育
+
+### 直播间开播
+
+<Route author="nczitzk" example="/wangqiutiyu/anchor/444" path="/wangqiutiyu/anchor/:id" :paramsDesc="['直播间 id, 可在主播直播间页 URL 中找到']"/>
 
 ## 战旗直播
 

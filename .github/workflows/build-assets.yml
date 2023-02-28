@@ -27,6 +27,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          build-args: PUPPETEER_SKIP_DOWNLOAD=0
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./assets
           user_name: 'github-actions[bot]'

@@ -13,7 +13,7 @@ permissions:
 jobs:
   build:
     name: npm publish
-    if: github.repository == 'DIYgod/RSSHub'
+    if: github.repository == 'simonmoreau/RSSHub'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:

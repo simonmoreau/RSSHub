@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-          build-args: PUPPETEER_SKIP_DOWNLOAD=0 
+          build-args: PUPPETEER_SKIP_DOWNLOAD=0
       - name: Build file
         run: yarn && npm run build:all
       - name: Deploy

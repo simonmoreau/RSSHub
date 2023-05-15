@@ -11694,10 +11694,10 @@ ramda@^0.26.1:
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.26.1.tgz#8d41351eb8111c55353617fc3bbffad8e4d35d06"
   integrity sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
 
-rand-user-agent@1.0.108:
-  version "1.0.108"
-  resolved "https://registry.yarnpkg.com/rand-user-agent/-/rand-user-agent-1.0.108.tgz#d778104547db117c850db0c7a37be3571452a8b2"
-  integrity sha512-vzpII3ZpsFPuk++pTr895d4ntSWBVyjeKEXthiianMiutuCxYPkUo01FB+uPVzAhpymTyQOmvcnKt0ymEcxuCg==
+rand-user-agent@2.0.13:
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/rand-user-agent/-/rand-user-agent-2.0.13.tgz#b45fd4eb961c121252b3561102877617db7f1c2e"
+  integrity sha512-fSJYmR0AV8vDPyuefgoZg0bWq124Eme7BlgeiBArbXG6SBdlhzKphPaNB2FV5zt58Be2SqVQCgAVSGgRnczQ3A==
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5, randombytes@^2.1.0:
   version "2.1.0"

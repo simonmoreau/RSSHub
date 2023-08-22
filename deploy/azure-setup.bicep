@@ -1,6 +1,6 @@
 param webAppName string = 'RSSHub${uniqueString(resourceGroup().id)}'  // Generate unique String for web app name
 param sku string = 'F1' // The SKU of App Service Plan
-param linuxFxVersion string = 'node|14-lts' // The runtime stack of web app
+param linuxFxVersion string = 'node|16-lts' // The runtime stack of web app
 param location string = resourceGroup().location // Location for all resources
 param repositoryUrl string = 'https://github.com/simonmoreau/RSSHub'
 param branch string = 'master'
@@ -30,11 +30,11 @@ resource appService 'Microsoft.Web/sites@2020-06-01' = {
   }
 }
 
-resource srcControls 'Microsoft.Web/sites/sourcecontrols@2021-01-01' = {
-  name: '${appService.name}/web'
-  properties: {
-    repoUrl: repositoryUrl
-    branch: branch
-    isManualIntegration: true
-  }
-}
+// resource srcControls 'Microsoft.Web/sites/sourcecontrols@2021-01-01' = {
+//   name: '${appService.name}/web'
+//   properties: {
+//     repoUrl: repositoryUrl
+//     branch: branch
+//     isManualIntegration: true
+//   }
+// }

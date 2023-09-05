@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   dependabot-fork:
-    if: github.repository_owner != 'DIYgod' && github.actor == 'dependabot[bot]'
+    if: github.repository_owner != 'simonmoreau' && github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
     name: Ignore dependabot on forks
     timeout-minutes: 5

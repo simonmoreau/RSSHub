@@ -5846,6 +5846,9 @@
     "/vimeo/user/:username/:cat?": [
         "MisteryMonster"
     ],
+    "/vinted/catalog/:search_text": [
+        "simonmoreau"
+    ],
     "/vlive/channel/:channel/board/:board": [
         "TonyRL"
     ],

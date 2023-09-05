@@ -24174,6 +24174,40 @@
       }
     ]
   },
+  "vinted.com": {
+    "_name": "Vinted",
+    ".": [
+      {
+        "title": "User videos",
+        "docs": "https://docs.rsshub.app/routes/social-media#vimeo-yong-hu-ye-mian",
+        "source": "/:username/"
+      },
+      {
+        "title": "User Video Category",
+        "docs": "https://docs.rsshub.app/routes/social-media#vimeo-yong-hu-ye-mian",
+        "source": "/"
+      },
+      {
+        "title": "Channel",
+        "docs": "https://docs.rsshub.app/routes/social-media#vimeo-channel",
+        "source": [
+          "/channels/:channel",
+          "/channels/:channel/videos",
+          "/channels/:channel/videos/:sort/:format"
+        ],
+        "target": "/vimeo/channel/:channel"
+      },
+      {
+        "title": "Category",
+        "docs": "https://docs.rsshub.app/routes/social-media#vimeo-category",
+        "source": [
+          "/categories/:category",
+          "/categories/:category/:subcategory",
+          "/categories/:category/:subcategory/videos"
+        ]
+      }
+    ]
+  },
   "vlive.tv": {
     "_name": "V LIVE",
     ".": [

@@ -1,0 +1,4 @@
+
+{{ if vdescription }}
+   <p>{{@ vdescription }}</p>
+{{ /if }}

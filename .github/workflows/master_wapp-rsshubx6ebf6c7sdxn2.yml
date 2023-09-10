@@ -8,6 +8,10 @@ on:
     branches:
       - master
 
+env:
+  AZURE_WEBAPP_NAME: wapp-rsshubx6ebf6c7sdxn2   # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -41,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: ./assets
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -60,7 +64,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'wapp-rsshubx6ebf6c7sdxn2'
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EC6A471EA207490A90F15E508BB3EEAB }}
-          package: .
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}

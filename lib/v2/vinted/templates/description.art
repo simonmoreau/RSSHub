@@ -1,4 +1,6 @@
-
 {{ if vdescription }}
+   <img src="{{@ image }}"></img>
    <p>{{@ vdescription }}</p>
+   <p>Size : {{@ size }}</p>
+   <p>Price : {{@ price }}</p>
 {{ /if }}
